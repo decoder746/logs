@@ -1,0 +1,903 @@
+Using random init
+Model parameters:  Namespace(A=0.6, B=2.6, b_factors=[15], batch_sizes=[255], beam_size=200, call_backs=[20], cluster_method='Parabel', config='DECAF/LF-AmazonTitles-131K.json', data_dir='/home/soumyac/scratch/XC/data', dataset='LF-AmazonTitles-131K', depth_lrs=[0.01], dlr_factor=0.5, dlr_steps=[10], dropout=0.5, emb_dir='random', embedding_dims=300, embeddings='/home/soumyac/scratch/XC/data/LF-AmazonTitles-131K/random', feature_indices='/home/soumyac/scratch/XC/data/LF-AmazonTitles-131K/df-xml_data/features_split.txt', feature_type='sparse', filter_labels='filter_labels_test.txt', force_shallow=True, freeze_embeddings=False, keep_invalid=False, label_features=37612, label_indices='/home/soumyac/scratch/XC/data/LF-AmazonTitles-131K/df-xml_data/labels_split.txt', label_words='Yf.txt', layers=['DECAFh'], mode='train', model_dir='/home/soumyac/scratch/XC/models/DECAF/LF-AmazonTitles-131K/v_TIME_RUN/surrogate', model_fname='DECAF-S', model_method='parabel', momentum=0.9, normalize=True, num_labels=131071, num_trees=3, num_workers=6, optim='Adam', pred_fname='test_predictions', result_dir='/home/soumyac/scratch/XC/results/DECAF/LF-AmazonTitles-131K/v_TIME_RUN/surrogate', tr_feat_fname='trn_X_Xf.txt', tr_label_fname='trn_X_Y.txt', trans_method='./json/DECAF-surrogate.json', tree_idx=-1, ts_feat_fname='tst_X_Xf.txt', ts_label_fname='tst_X_Y.txt', use_classifier_wts=False, v_lbl_fts='/home/soumyac/scratch/XC/data/LF-AmazonTitles-131K/df-xml_data/v_lbs_fts_split.txt', val_feat_fname='tst_X_Xf.txt', val_label_fname='tst_X_Y.txt', validate=True, validate_after=5, vocabulary_dims=37612, weight_decay=0)
+Loading from pre-build file
+Overlap is: 73328
+INFO:DECAF-S:Loading training data.
+INFO:DECAF-S:Loading validation data.
+INFO:DECAF-S:Filtering labels to remove overlap
+INFO:DECAF-S:Label centroids shape: (131071, 37612)
+learning for depth 0
+learning for depth 0
+Using eye to initialize!
+Merging labels
+Using eye to initialize!
+DECAFpp(
+  (depth_node): DECAFh(
+    (embed): CustomEmbedding(37613, 300, cuda:0, padding_idx=37612)
+    (transform_fine): Transform(
+      (transform): Sequential(
+        (0): Rpp(
+          (a): Parameter(dim=torch.Size([1, 300]))
+          (b): Parameter(dim=torch.Size([1, 300]))
+          (nonLin): Sequential(
+            (0): ReLU()
+            (1): Dropout(p=0.5, inplace=False)
+            (2): Linear(in_features=300, out_features=300, bias=True)
+          )
+        )
+        (1): ReLU()
+        (2): Dropout(p=0.5, inplace=False)
+      )
+    )
+    (clf_from_fts): LabelFts(300, 37612, False, cuda:0, False
+    Transform(
+      (transform): Sequential(
+        (0): Rpp(
+          (a): Parameter(dim=torch.Size([1, 300]))
+          (b): Parameter(dim=torch.Size([1, 300]))
+          (nonLin): Sequential(
+            (0): ReLU()
+            (1): Dropout(p=0.5, inplace=False)
+            (2): Linear(in_features=300, out_features=300, bias=True)
+          )
+        )
+      )
+    ))
+    (clf_from_wts): CombineUV(300, 32768, cuda:0, False, sparse=False)
+  )
+)
+No need to clean
+INFO:DECAF-S:Training progress: [0/1157]
+INFO:DECAF-S:Training progress: [500/1157]
+INFO:DECAF-S:Training progress: [1000/1157]
+INFO:DECAF-S:Epoch: 0, loss: 0.011788509858660215, time: 49.23883128166199 sec
+No need to clean
+INFO:DECAF-S:Preping the classifier
+INFO:DECAF-S:Prediction progress: [0/529]
+INFO:DECAF-S:Prediction progress: [500/529]
+INFO:DECAF-S:Avg pred time 0.0033 ms
+INFO:DECAF-S:R@1: 1.4193273259910248, R@3: 2.105672364989309, R@200: 5.452701449920156
+INFO:DECAF-S:P@1: 1.642748544517373, P@3: 0.8625356917714304, P@200: 0.041895650239186275
+Cleaing for GPU
+INFO:DECAF-S:Training progress: [0/1157]
+INFO:DECAF-S:Training progress: [500/1157]
+INFO:DECAF-S:Training progress: [1000/1157]
+INFO:DECAF-S:Epoch: 1, loss: 0.0006828883797545404, time: 41.91097331047058 sec
+No need to clean
+INFO:DECAF-S:Training progress: [0/1157]
+INFO:DECAF-S:Training progress: [500/1157]
+INFO:DECAF-S:Training progress: [1000/1157]
+INFO:DECAF-S:Epoch: 2, loss: 0.0005845896172588371, time: 40.57776713371277 sec
+No need to clean
+INFO:DECAF-S:Training progress: [0/1157]
+INFO:DECAF-S:Training progress: [500/1157]
+INFO:DECAF-S:Training progress: [1000/1157]
+INFO:DECAF-S:Epoch: 3, loss: 0.0005195815272335293, time: 41.75753045082092 sec
+No need to clean
+INFO:DECAF-S:Training progress: [0/1157]
+INFO:DECAF-S:Training progress: [500/1157]
+INFO:DECAF-S:Training progress: [1000/1157]
+INFO:DECAF-S:Epoch: 4, loss: 0.00045715644109964754, time: 41.71875977516174 sec
+No need to clean
+INFO:DECAF-S:Training progress: [0/1157]
+INFO:DECAF-S:Training progress: [500/1157]
+INFO:DECAF-S:Training progress: [1000/1157]
+INFO:DECAF-S:Epoch: 5, loss: 0.00040858258619104747, time: 41.0477409362793 sec
+No need to clean
+INFO:DECAF-S:Preping the classifier
+INFO:DECAF-S:Prediction progress: [0/529]
+INFO:DECAF-S:Prediction progress: [500/529]
+INFO:DECAF-S:Avg pred time 0.0031 ms
+INFO:DECAF-S:R@1: 16.808840434604427, R@3: 27.664800187883966, R@200: 58.289576148626196
+INFO:DECAF-S:P@1: 25.870137575555308, P@3: 15.665319340921737, P@200: 0.5433974858155969
+Cleaing for GPU
+INFO:DECAF-S:Training progress: [0/1157]
+INFO:DECAF-S:Training progress: [500/1157]
+INFO:DECAF-S:Training progress: [1000/1157]
+INFO:DECAF-S:Epoch: 6, loss: 0.0003718318242706523, time: 38.48742938041687 sec
+No need to clean
+INFO:DECAF-S:Training progress: [0/1157]
+INFO:DECAF-S:Training progress: [500/1157]
+INFO:DECAF-S:Training progress: [1000/1157]
+INFO:DECAF-S:Epoch: 7, loss: 0.0003437943712091436, time: 38.93407440185547 sec
+No need to clean
+INFO:DECAF-S:Training progress: [0/1157]
+INFO:DECAF-S:Training progress: [500/1157]
+INFO:DECAF-S:Training progress: [1000/1157]
+INFO:DECAF-S:Epoch: 8, loss: 0.0003221945551445863, time: 38.88271880149841 sec
+No need to clean
+INFO:DECAF-S:Training progress: [0/1157]
+INFO:DECAF-S:Training progress: [500/1157]
+INFO:DECAF-S:Training progress: [1000/1157]
+INFO:DECAF-S:Epoch: 9, loss: 0.0003058610453591048, time: 38.683284521102905 sec
+INFO:DECAF-S:Adjusted learning rate to: 0.005
+No need to clean
+INFO:DECAF-S:Training progress: [0/1157]
+INFO:DECAF-S:Training progress: [500/1157]
+INFO:DECAF-S:Training progress: [1000/1157]
+INFO:DECAF-S:Epoch: 10, loss: 0.0002804873559534222, time: 39.08382701873779 sec
+No need to clean
+INFO:DECAF-S:Preping the classifier
+INFO:DECAF-S:Prediction progress: [0/529]
+INFO:DECAF-S:Prediction progress: [500/529]
+INFO:DECAF-S:Avg pred time 0.0030 ms
+INFO:DECAF-S:R@1: 20.655579041047947, R@3: 34.83772759298433, R@200: 64.4484122569565
+INFO:DECAF-S:P@1: 31.543738643527274, P@3: 19.765392269558262, P@200: 0.6020617792111773
+Cleaing for GPU
+INFO:DECAF-S:Training progress: [0/1157]
+INFO:DECAF-S:Training progress: [500/1157]
+INFO:DECAF-S:Training progress: [1000/1157]
+INFO:DECAF-S:Epoch: 11, loss: 0.00026879555343066594, time: 38.524908781051636 sec
+No need to clean
+INFO:DECAF-S:Training progress: [0/1157]
+INFO:DECAF-S:Training progress: [500/1157]
+INFO:DECAF-S:Training progress: [1000/1157]
+INFO:DECAF-S:Epoch: 12, loss: 0.0002598581652481228, time: 39.00459885597229 sec
+No need to clean
+INFO:DECAF-S:Training progress: [0/1157]
+INFO:DECAF-S:Training progress: [500/1157]
+INFO:DECAF-S:Training progress: [1000/1157]
+INFO:DECAF-S:Epoch: 13, loss: 0.0002520363127781653, time: 38.71259307861328 sec
+No need to clean
+INFO:DECAF-S:Training progress: [0/1157]
+INFO:DECAF-S:Training progress: [500/1157]
+INFO:DECAF-S:Training progress: [1000/1157]
+INFO:DECAF-S:Epoch: 14, loss: 0.000244691868893948, time: 38.98045754432678 sec
+INFO:DECAF-S:Adjusted learning rate to: 0.0025
+No need to clean
+INFO:DECAF-S:Training progress: [0/1157]
+INFO:DECAF-S:Training progress: [500/1157]
+INFO:DECAF-S:Training progress: [1000/1157]
+INFO:DECAF-S:Epoch: 15, loss: 0.00023131116195318935, time: 38.84918475151062 sec
+No need to clean
+INFO:DECAF-S:Preping the classifier
+INFO:DECAF-S:Prediction progress: [0/529]
+INFO:DECAF-S:Prediction progress: [500/529]
+INFO:DECAF-S:Avg pred time 0.0030 ms
+INFO:DECAF-S:R@1: 21.5680028677, R@3: 36.477076921175474, R@200: 65.38212135820382
+INFO:DECAF-S:P@1: 32.80008899766381, P@3: 20.727803117383786, P@200: 0.6115622798230284
+Cleaing for GPU
+INFO:DECAF-S:Training progress: [0/1157]
+INFO:DECAF-S:Training progress: [500/1157]
+INFO:DECAF-S:Training progress: [1000/1157]
+INFO:DECAF-S:Epoch: 16, loss: 0.00022597798219218396, time: 38.772467851638794 sec
+No need to clean
+INFO:DECAF-S:Training progress: [0/1157]
+INFO:DECAF-S:Training progress: [500/1157]
+INFO:DECAF-S:Training progress: [1000/1157]
+INFO:DECAF-S:Epoch: 17, loss: 0.00022136292426579558, time: 38.942878007888794 sec
+No need to clean
+INFO:DECAF-S:Training progress: [0/1157]
+INFO:DECAF-S:Training progress: [500/1157]
+INFO:DECAF-S:Training progress: [1000/1157]
+INFO:DECAF-S:Epoch: 18, loss: 0.0002179202444289453, time: 39.03555130958557 sec
+No need to clean
+INFO:DECAF-S:Training progress: [0/1157]
+INFO:DECAF-S:Training progress: [500/1157]
+INFO:DECAF-S:Training progress: [1000/1157]
+INFO:DECAF-S:Epoch: 19, loss: 0.00021465889877131934, time: 38.24699664115906 sec
+No need to clean
+INFO:DECAF-S:Preping the classifier
+INFO:DECAF-S:Prediction progress: [0/529]
+INFO:DECAF-S:Prediction progress: [500/529]
+INFO:DECAF-S:Avg pred time 0.0031 ms
+INFO:DECAF-S:R@1: 21.832770917538625, R@3: 36.97558744638527, R@200: 65.5282011347208
+INFO:DECAF-S:P@1: 33.18129565765565, P@3: 21.026439722617184, P@200: 0.6132421107274658
+INFO:DECAF-S:Training time: 799.4472422599792 sec, Validation time: 2.0826268196105957 sec, Shortlist time: 0 sec, Model size: 43.73817443847656 MB
+Using random init
+Model parameters:  Namespace(A=0.6, B=2.6, b_factors=[15], batch_sizes=[255], beam_size=200, call_backs=[20], cluster_method='Parabel', config='DECAF/LF-AmazonTitles-131K.json', data_dir='/home/soumyac/scratch/XC/data', dataset='LF-AmazonTitles-131K', depth_lrs=[0.01], dlr_factor=0.5, dlr_steps=[10], dropout=0.5, emb_dir='random', embedding_dims=300, embeddings='/home/soumyac/scratch/XC/data/LF-AmazonTitles-131K/random', feature_indices='/home/soumyac/scratch/XC/data/LF-AmazonTitles-131K/df-xml_data/features_split.txt', feature_type='sparse', filter_labels='filter_labels_test.txt', force_shallow=True, freeze_embeddings=False, keep_invalid=False, label_features=37612, label_indices='/home/soumyac/scratch/XC/data/LF-AmazonTitles-131K/df-xml_data/labels_split.txt', label_words='Yf.txt', layers=['DECAFh'], mode='extract', model_dir='/home/soumyac/scratch/XC/models/DECAF/LF-AmazonTitles-131K/v_TIME_RUN/surrogate', model_fname='DECAF-S', model_method='parabel', momentum=0.9, normalize=True, num_labels=131071, num_trees=3, num_workers=6, optim='Adam', pred_fname='test_predictions', result_dir='/home/soumyac/scratch/XC/results/DECAF/LF-AmazonTitles-131K/v_TIME_RUN/surrogate', tr_feat_fname='trn_X_Xf.txt', tr_label_fname='trn_X_Y.txt', trans_method='./json/DECAF-surrogate.json', tree_idx=-1, ts_feat_fname='tst_X_Xf.txt', ts_label_fname='tst_X_Y.txt', use_classifier_wts=False, v_lbl_fts='/home/soumyac/scratch/XC/data/LF-AmazonTitles-131K/df-xml_data/v_lbs_fts_split.txt', val_feat_fname='tst_X_Xf.txt', val_label_fname='tst_X_Y.txt', validate=True, validate_after=5, vocabulary_dims=37612, weight_decay=0)
+Loading from pre-build file
+Overlap is: 73328
+Using eye to initialize!
+Merging labels
+Using eye to initialize!
+Loading embeddings from file: /home/soumyac/scratch/XC/models/DECAF/LF-AmazonTitles-131K/v_TIME_RUN/surrogate/embeddings.pkl
+Model parameters:  Namespace(A=0.6, B=2.6, b_factors=[15], batch_sizes=[255, 255], beam_size=200, call_backs=[10, 10], cluster_method='Parabel', config='DECAF/LF-AmazonTitles-131K.json', data_dir='/home/soumyac/scratch/XC/data', dataset='LF-AmazonTitles-131K', depth_lrs=[0.008, 0.008], dlr_factor=0.5, dlr_steps=[5, 5], dropout=0.2, emb_dir='/home/soumyac/scratch/XC/models/DECAF/LF-AmazonTitles-131K/v_TIME_RUN/surrogate', embedding_dims=300, embeddings='/home/soumyac/scratch/XC/models/DECAF/LF-AmazonTitles-131K/v_TIME_RUN/surrogate/embeddings.pkl', feature_indices='/home/soumyac/scratch/XC/data/LF-AmazonTitles-131K/df-xml_data/features_split.txt', feature_type='sparse', filter_labels='filter_labels_test.txt', force_shallow=True, freeze_embeddings=False, keep_invalid=False, label_features=37612, label_indices='/home/soumyac/scratch/XC/data/LF-AmazonTitles-131K/df-xml_data/labels_split.txt', label_words='Yf.txt', layers=['DECAFh', 'DECAFt'], mode='train', model_dir='/home/soumyac/scratch/XC/models/DECAF/LF-AmazonTitles-131K/v_TIME_RUN/XC/3', model_fname='DECAF', model_method='parabel', momentum=0.9, normalize=True, num_labels=131071, num_trees=3, num_workers=6, optim='Adam', pred_fname='test_predictions', result_dir='/home/soumyac/scratch/XC/results/DECAF/LF-AmazonTitles-131K/v_TIME_RUN/XC/3', tr_feat_fname='trn_X_Xf.txt', tr_label_fname='trn_X_Y.txt', trans_method='./json/DECAF.json', tree_idx=3, ts_feat_fname='tst_X_Xf.txt', ts_label_fname='tst_X_Y.txt', use_classifier_wts=True, v_lbl_fts='/home/soumyac/scratch/XC/data/LF-AmazonTitles-131K/df-xml_data/v_lbs_fts_split.txt', val_feat_fname='tst_X_Xf.txt', val_label_fname='tst_X_Y.txt', validate=True, validate_after=5, vocabulary_dims=37612, weight_decay=0)
+Loading from pre-build file
+Overlap is: 73328
+INFO:DECAF:Loading training data.
+INFO:DECAF:Loading validation data.
+INFO:DECAF:Filtering labels to remove overlap
+INFO:DECAF:Fectching progress: [0/1157]
+INFO:DECAF:Fectching progress: [500/1157]
+INFO:DECAF:Fectching progress: [1000/1157]
+INFO:DECAF:Label centroids shape: (131071, 300)
+Using dense kmeans++
+Building tree at height 0 with nodes: 32768
+Total clusters 2 Avg. Cluster size 65535.5 Total time 2.4582669734954834 sec
+Total clusters 4 Avg. Cluster size 32767.75 Total time 3.4651942253112793 sec
+Total clusters 8 Avg. Cluster size 16383.875 Total time 4.335718393325806 sec
+Total clusters 16 Avg. Cluster size 8191.9375 Total time 5.977757453918457 sec
+Total clusters 32 Avg. Cluster size 4095.96875 Total time 7.070332765579224 sec
+Total clusters 64 Avg. Cluster size 2047.984375 Total time 7.881966829299927 sec
+Total clusters 128 Avg. Cluster size 1023.9921875 Total time 9.015101194381714 sec
+Total clusters 256 Avg. Cluster size 511.99609375 Total time 10.19832992553711 sec
+Total clusters 512 Avg. Cluster size 255.998046875 Total time 11.370685815811157 sec
+Total clusters 1024 Avg. Cluster size 127.9990234375 Total time 11.940592288970947 sec
+Total clusters 2048 Avg. Cluster size 63.99951171875 Total time 12.58178162574768 sec
+Total clusters 4096 Avg. Cluster size 31.999755859375 Total time 13.372148990631104 sec
+Total clusters 8192 Avg. Cluster size 15.9998779296875 Total time 14.35628867149353 sec
+Total clusters 16384 Avg. Cluster size 7.99993896484375 Total time 16.02114224433899 sec
+Total clusters 32768 Avg. Cluster size 3.999969482421875 Total time 18.404442310333252 sec
+Preparing Leaf
+Building tree at height 2 with max leafs: 131072
+Sparsity of leaf is 0.00
+ANNS trian time: 18.833221197128296 sec
+learning for depth 0
+learning for depth 0
+Using eye to initialize!
+Merging labels
+Using eye to initialize!
+INFO::Initializing the classifier
+DECAFpp(
+  (depth_node): DECAFh(
+    (embed): CustomEmbedding(37613, 300, cuda:0, padding_idx=37612)
+    (transform_fine): Transform(
+      (transform): Sequential(
+        (0): Rpp(
+          (a): Parameter(dim=torch.Size([1, 300]))
+          (b): Parameter(dim=torch.Size([1, 300]))
+          (nonLin): Sequential(
+            (0): ReLU()
+            (1): Dropout(p=0.2, inplace=False)
+            (2): Linear(in_features=300, out_features=300, bias=True)
+          )
+        )
+        (1): ReLU()
+        (2): Dropout(p=0.2, inplace=False)
+      )
+    )
+    (clf_from_fts): LabelFts(300, 37612, False, cuda:0, False
+    Transform(
+      (transform): Sequential(
+        (0): Rpp(
+          (a): Parameter(dim=torch.Size([1, 300]))
+          (b): Parameter(dim=torch.Size([1, 300]))
+          (nonLin): Sequential(
+            (0): ReLU()
+            (1): Dropout(p=0.2, inplace=False)
+            (2): Linear(in_features=300, out_features=300, bias=True)
+          )
+        )
+      )
+    ))
+    (clf_from_wts): CombineUV(300, 32768, cuda:0, True, sparse=False, bias=True, Alpha=(1, 300), Beta=(1, 300), weight=(32768, 300))
+  )
+)
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 0, loss: 0.0025509902282266506, time: 46.18341565132141 sec
+No need to clean
+Alpha= 0.5216243 Beta= 0.52361065
+||u||=9.75, ||v||=6.74, ||w||=8.56
+INFO:DECAF:Preping the classifier
+INFO:DECAF:Prediction progress: [0/529]
+INFO:DECAF:Prediction progress: [500/529]
+INFO:DECAF:Avg pred time 0.0031 ms
+INFO:DECAF:R@1: 20.175980519398195, R@3: 32.825923041742946, R@200: 63.0756850966
+INFO:DECAF:P@1: 30.339303593280675, P@3: 18.02351021618595, P@200: 0.5710090110130338
+Cleaing for GPU
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 1, loss: 0.0002924895323499905, time: 45.47000074386597 sec
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 2, loss: 0.00026611289005353835, time: 44.91543984413147 sec
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 3, loss: 0.0002408096456614808, time: 44.45647358894348 sec
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 4, loss: 0.0002152726012373678, time: 44.6120970249176 sec
+INFO:DECAF:Adjusted learning rate to: 0.004
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 5, loss: 0.00018762167377600112, time: 44.67161464691162 sec
+No need to clean
+Alpha= 0.6319859 Beta= 0.54273564
+||u||=10.01, ||v||=7.26, ||w||=10.07
+INFO:DECAF:Preping the classifier
+INFO:DECAF:Prediction progress: [0/529]
+INFO:DECAF:Prediction progress: [500/529]
+INFO:DECAF:Avg pred time 0.0031 ms
+INFO:DECAF:R@1: 22.854562984385424, R@3: 38.24424914401605, R@200: 67.55459141419827
+INFO:DECAF:P@1: 34.467311899729296, P@3: 21.32952621104068, P@200: 0.61518151815135
+Cleaing for GPU
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 6, loss: 0.00017235786248979274, time: 44.091601610183716 sec
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 7, loss: 0.0001568831031194486, time: 44.742579221725464 sec
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 8, loss: 0.00014141355309040275, time: 44.68608546257019 sec
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 9, loss: 0.0001265568576271035, time: 44.567829847335815 sec
+No need to clean
+Alpha= 0.8092726 Beta= 0.5084504
+||u||=10.16, ||v||=6.49, ||w||=10.96
+INFO:DECAF:Preping the classifier
+INFO:DECAF:Prediction progress: [0/529]
+INFO:DECAF:Prediction progress: [500/529]
+INFO:DECAF:Avg pred time 0.0031 ms
+INFO:DECAF:R@1: 23.83232592921901, R@3: 39.86382121358229, R@200: 67.69487398178106
+INFO:DECAF:P@1: 35.911298995068044, P@3: 22.338413616634632, P@200: 0.6163755701408178
+learning for depth 1
+Cleaing for GPU
+Alpha= 0.8092726 Beta= 0.5084504
+||u||=10.16, ||v||=6.49, ||w||=10.96
+INFO:DECAF:Preping the classifier
+INFO:DECAF:Prediction progress: [0/1157]
+INFO:DECAF:Prediction progress: [500/1157]
+INFO:DECAF:Prediction progress: [1000/1157]
+INFO:DECAF:Avg pred time 0.0032 ms
+INFO:DECAF:R@1: 57.03328290128361, R@3: 83.76101000467088, R@200: 97.83932121219098
+INFO:DECAF:P@1: 85.0359243654719, P@3: 49.78278027674947, P@200: 0.9151978045133666
+Shortlist to beam [0/294786]
+Shortlist to beam [127500/294786]
+Shortlist to beam [255000/294786]
+Average shortlist size 799.9476331983201
+learning for depth 1
+Cleaing for GPU
+Alpha= 0.8092726 Beta= 0.5084504
+||u||=10.16, ||v||=6.49, ||w||=10.96
+INFO:DECAF:Preping the classifier
+INFO:DECAF:Prediction progress: [0/529]
+INFO:DECAF:Prediction progress: [500/529]
+INFO:DECAF:Avg pred time 0.0031 ms
+INFO:DECAF:R@1: 23.83232592921901, R@3: 39.86382121358229, R@200: 67.69487398178106
+INFO:DECAF:P@1: 35.911298995068044, P@3: 22.338413616634632, P@200: 0.6163755701408178
+Shortlist to beam [0/134835]
+Shortlist to beam [127500/134835]
+Average shortlist size 799.9518522638781
+INFO::DECAF::Setting from top layer
+Using eye to initialize!
+Using eye to initialize!
+INFO::Initializing the classifier
+DECAFpp(
+  (depth_node): DECAFt(
+    (embed): CustomEmbedding(37613, 300, cuda:0, padding_idx=37612)
+    (transform_fine): Transform(
+      (transform): Sequential(
+        (0): Rpp(
+          (a): Parameter(dim=torch.Size([1, 300]))
+          (b): Parameter(dim=torch.Size([1, 300]))
+          (nonLin): Sequential(
+            (0): ReLU()
+            (1): Dropout(p=0.2, inplace=False)
+            (2): Linear(in_features=300, out_features=300, bias=True)
+          )
+        )
+        (1): ReLU()
+        (2): Dropout(p=0.2, inplace=False)
+      )
+    )
+    (clf_from_fts): LabelFts(300, 37612, False, cuda:0, False
+    Transform(
+      (transform): Sequential(
+        (0): Rpp(
+          (a): Parameter(dim=torch.Size([1, 300]))
+          (b): Parameter(dim=torch.Size([1, 300]))
+          (nonLin): Sequential(
+            (0): ReLU()
+            (1): Dropout(p=0.2, inplace=False)
+            (2): Linear(in_features=300, out_features=300, bias=True)
+          )
+        )
+      )
+    ))
+    (clf_from_wts): CombineUV(300, 131072, cuda:0, True, sparse=True, bias=True, Alpha=(1, 300), Beta=(1, 300), weight=(131072, 300))
+  )
+)
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 0, loss: 0.024849994169877116, time: 79.3651831150055 sec
+No need to clean
+Alpha= 0.4458108 Beta= 0.52720404
+||u||=8.98, ||v||=6.55, ||w||=7.23
+INFO:DECAF:Preping the classifier
+INFO:DECAF:Prediction progress: [0/529]
+INFO:DECAF:Prediction progress: [500/529]
+INFO:DECAF:Avg pred time 0.0203 ms
+INFO:DECAF:Filtering labels to remove overlap
+INFO:DECAF:Filtering labels to remove overlap
+INFO:DECAF:R@1: 18.592341256596153, R@3: 33.18022026921797, R@200: 63.65436768396013
+INFO:DECAF:P@1: 32.06659991841881, P@3: 21.812338537219443, P@200: 0.6845069900243349
+Cleaing for GPU
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 1, loss: 0.009060174685072, time: 80.07158088684082 sec
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 2, loss: 0.006430073154642512, time: 80.43350529670715 sec
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 3, loss: 0.004194644456179287, time: 81.09094333648682 sec
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 4, loss: 0.0029192718389853575, time: 78.42878079414368 sec
+INFO:DECAF:Adjusted learning rate to: 0.004
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 5, loss: 0.0017826873962322148, time: 80.65309810638428 sec
+No need to clean
+Alpha= 0.8277071 Beta= 0.43437323
+||u||=11.38, ||v||=5.68, ||w||=11.34
+INFO:DECAF:Preping the classifier
+INFO:DECAF:Prediction progress: [0/529]
+INFO:DECAF:Prediction progress: [500/529]
+INFO:DECAF:Avg pred time 0.0200 ms
+INFO:DECAF:Filtering labels to remove overlap
+INFO:DECAF:Filtering labels to remove overlap
+INFO:DECAF:R@1: 21.6082743105747, R@3: 37.4538139207173, R@200: 63.98210158094552
+INFO:DECAF:P@1: 36.79089257240331, P@3: 24.669163545562732, P@200: 0.6875366188299095
+Cleaing for GPU
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 6, loss: 0.0013344425864325609, time: 79.98384284973145 sec
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 7, loss: 0.0011988484071339728, time: 80.84194016456604 sec
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 8, loss: 0.001110595049099919, time: 79.74655890464783 sec
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 9, loss: 0.0010317559979931231, time: 79.84487199783325 sec
+No need to clean
+Alpha= 0.8976124 Beta= 0.38586643
+||u||=11.71, ||v||=5.96, ||w||=12.16
+INFO:DECAF:Preping the classifier
+INFO:DECAF:Prediction progress: [0/529]
+INFO:DECAF:Prediction progress: [500/529]
+INFO:DECAF:Avg pred time 0.0200 ms
+INFO:DECAF:Filtering labels to remove overlap
+INFO:DECAF:Filtering labels to remove overlap
+INFO:DECAF:R@1: 21.739558225483048, R@3: 37.59350317054124, R@200: 63.74594875217943
+INFO:DECAF:P@1: 36.95998813364483, P@3: 24.775219094938052, P@200: 0.6847554418358079
+INFO:DECAF:Training time: 1267.8044216632843 sec, Validation time: 9.366565227508545 sec, Shortlist time: 0 sec, Model size: 275.6059265136719 MB
+Loading embeddings from file: /home/soumyac/scratch/XC/models/DECAF/LF-AmazonTitles-131K/v_TIME_RUN/surrogate/embeddings.pkl
+Model parameters:  Namespace(A=0.6, B=2.6, b_factors=[15], batch_sizes=[255, 255], beam_size=200, call_backs=[10, 10], cluster_method='Parabel', config='DECAF/LF-AmazonTitles-131K.json', data_dir='/home/soumyac/scratch/XC/data', dataset='LF-AmazonTitles-131K', depth_lrs=[0.008, 0.008], dlr_factor=0.5, dlr_steps=[5, 5], dropout=0.2, emb_dir='/home/soumyac/scratch/XC/models/DECAF/LF-AmazonTitles-131K/v_TIME_RUN/surrogate', embedding_dims=300, embeddings='/home/soumyac/scratch/XC/models/DECAF/LF-AmazonTitles-131K/v_TIME_RUN/surrogate/embeddings.pkl', feature_indices='/home/soumyac/scratch/XC/data/LF-AmazonTitles-131K/df-xml_data/features_split.txt', feature_type='sparse', filter_labels='filter_labels_test.txt', force_shallow=True, freeze_embeddings=False, keep_invalid=False, label_features=37612, label_indices='/home/soumyac/scratch/XC/data/LF-AmazonTitles-131K/df-xml_data/labels_split.txt', label_words='Yf.txt', layers=['DECAFh', 'DECAFt'], mode='predict', model_dir='/home/soumyac/scratch/XC/models/DECAF/LF-AmazonTitles-131K/v_TIME_RUN/XC/3', model_fname='DECAF', model_method='parabel', momentum=0.9, normalize=True, num_labels=131071, num_trees=3, num_workers=6, optim='Adam', pred_fname='test_predictions', result_dir='/home/soumyac/scratch/XC/results/DECAF/LF-AmazonTitles-131K/v_TIME_RUN/XC/3', tr_feat_fname='trn_X_Xf.txt', tr_label_fname='trn_X_Y.txt', trans_method='./json/DECAF.json', tree_idx=3, ts_feat_fname='tst_X_Xf.txt', ts_label_fname='tst_X_Y.txt', use_classifier_wts=True, v_lbl_fts='/home/soumyac/scratch/XC/data/LF-AmazonTitles-131K/df-xml_data/v_lbs_fts_split.txt', val_feat_fname='tst_X_Xf.txt', val_label_fname='tst_X_Y.txt', validate=True, validate_after=5, vocabulary_dims=37612, weight_decay=0)
+Loading from pre-build file
+Overlap is: 73328
+INFO:DECAF:Preping the classifile
+INFO:DECAF:Predicting for depth 0
+learning for depth 0
+Using eye to initialize!
+Merging labels
+Using eye to initialize!
+INFO:DECAF:Predicting for depth 1
+learning for depth 1
+No need to clean
+Alpha= 0.8092726 Beta= 0.5084504
+||u||=10.16, ||v||=6.49, ||w||=10.96
+INFO:DECAF:Preping the classifier
+INFO:DECAF:Prediction progress: [0/529]
+INFO:DECAF:Prediction progress: [500/529]
+INFO:DECAF:Avg pred time 0.0063 ms
+INFO:DECAF:R@1: 23.83232592921901, R@3: 39.86382121358229, R@200: 67.69487398178106
+INFO:DECAF:P@1: 35.911298995068044, P@3: 22.338413616634632, P@200: 0.6163755701408178
+Shortlist to beam [0/134835]
+Shortlist to beam [127500/134835]
+Average shortlist size 799.9518522638781
+Using eye to initialize!
+Using eye to initialize!
+No need to clean
+Alpha= 0.8976124 Beta= 0.38586643
+||u||=11.71, ||v||=5.96, ||w||=12.16
+INFO:DECAF:Preping the classifier
+INFO:DECAF:Prediction progress: [0/529]
+INFO:DECAF:Prediction progress: [500/529]
+INFO:DECAF:Avg pred time 0.0197 ms
+INFO:DECAF:Filtering labels to remove overlap
+INFO:DECAF:Filtering labels to remove overlap
+INFO:DECAF:R@1: 21.739558225483048, R@3: 37.59350317054124, R@200: 63.74594875217943
+INFO:DECAF:P@1: 36.95998813364483, P@3: 24.775219094938052, P@200: 0.6847554418358079
+Loading embeddings from file: /home/soumyac/scratch/XC/models/DECAF/LF-AmazonTitles-131K/v_TIME_RUN/surrogate/embeddings.pkl
+Model parameters:  Namespace(A=0.6, B=2.6, b_factors=[15], batch_sizes=[255, 255], beam_size=200, call_backs=[10, 10], cluster_method='Parabel', config='DECAF/LF-AmazonTitles-131K.json', data_dir='/home/soumyac/scratch/XC/data', dataset='LF-AmazonTitles-131K', depth_lrs=[0.008, 0.008], dlr_factor=0.5, dlr_steps=[5, 5], dropout=0.2, emb_dir='/home/soumyac/scratch/XC/models/DECAF/LF-AmazonTitles-131K/v_TIME_RUN/surrogate', embedding_dims=300, embeddings='/home/soumyac/scratch/XC/models/DECAF/LF-AmazonTitles-131K/v_TIME_RUN/surrogate/embeddings.pkl', feature_indices='/home/soumyac/scratch/XC/data/LF-AmazonTitles-131K/df-xml_data/features_split.txt', feature_type='sparse', filter_labels='filter_labels_test.txt', force_shallow=True, freeze_embeddings=False, keep_invalid=False, label_features=37612, label_indices='/home/soumyac/scratch/XC/data/LF-AmazonTitles-131K/df-xml_data/labels_split.txt', label_words='Yf.txt', layers=['DECAFh', 'DECAFt'], mode='train', model_dir='/home/soumyac/scratch/XC/models/DECAF/LF-AmazonTitles-131K/v_TIME_RUN/XC/2', model_fname='DECAF', model_method='parabel', momentum=0.9, normalize=True, num_labels=131071, num_trees=3, num_workers=6, optim='Adam', pred_fname='test_predictions', result_dir='/home/soumyac/scratch/XC/results/DECAF/LF-AmazonTitles-131K/v_TIME_RUN/XC/2', tr_feat_fname='trn_X_Xf.txt', tr_label_fname='trn_X_Y.txt', trans_method='./json/DECAF.json', tree_idx=2, ts_feat_fname='tst_X_Xf.txt', ts_label_fname='tst_X_Y.txt', use_classifier_wts=True, v_lbl_fts='/home/soumyac/scratch/XC/data/LF-AmazonTitles-131K/df-xml_data/v_lbs_fts_split.txt', val_feat_fname='tst_X_Xf.txt', val_label_fname='tst_X_Y.txt', validate=True, validate_after=5, vocabulary_dims=37612, weight_decay=0)
+Loading from pre-build file
+Overlap is: 73328
+INFO:DECAF:Loading training data.
+INFO:DECAF:Loading validation data.
+INFO:DECAF:Filtering labels to remove overlap
+INFO:DECAF:Fectching progress: [0/1157]
+INFO:DECAF:Fectching progress: [500/1157]
+INFO:DECAF:Fectching progress: [1000/1157]
+INFO:DECAF:Label centroids shape: (131071, 300)
+Using dense kmeans++
+Building tree at height 0 with nodes: 32768
+Total clusters 2 Avg. Cluster size 65535.5 Total time 1.5395958423614502 sec
+Total clusters 4 Avg. Cluster size 32767.75 Total time 2.270353078842163 sec
+Total clusters 8 Avg. Cluster size 16383.875 Total time 3.1331379413604736 sec
+Total clusters 16 Avg. Cluster size 8191.9375 Total time 4.809643030166626 sec
+Total clusters 32 Avg. Cluster size 4095.96875 Total time 5.740188360214233 sec
+Total clusters 64 Avg. Cluster size 2047.984375 Total time 6.626341104507446 sec
+Total clusters 128 Avg. Cluster size 1023.9921875 Total time 7.610251426696777 sec
+Total clusters 256 Avg. Cluster size 511.99609375 Total time 8.863835334777832 sec
+Total clusters 512 Avg. Cluster size 255.998046875 Total time 10.29275107383728 sec
+Total clusters 1024 Avg. Cluster size 127.9990234375 Total time 10.867372035980225 sec
+Total clusters 2048 Avg. Cluster size 63.99951171875 Total time 11.46213698387146 sec
+Total clusters 4096 Avg. Cluster size 31.999755859375 Total time 12.176957845687866 sec
+Total clusters 8192 Avg. Cluster size 15.9998779296875 Total time 13.105853080749512 sec
+Total clusters 16384 Avg. Cluster size 7.99993896484375 Total time 14.469051361083984 sec
+Total clusters 32768 Avg. Cluster size 3.999969482421875 Total time 16.74051833152771 sec
+Preparing Leaf
+Building tree at height 2 with max leafs: 131072
+Sparsity of leaf is 0.00
+ANNS trian time: 17.092570781707764 sec
+learning for depth 0
+learning for depth 0
+Using eye to initialize!
+Merging labels
+Using eye to initialize!
+INFO::Initializing the classifier
+DECAFpp(
+  (depth_node): DECAFh(
+    (embed): CustomEmbedding(37613, 300, cuda:0, padding_idx=37612)
+    (transform_fine): Transform(
+      (transform): Sequential(
+        (0): Rpp(
+          (a): Parameter(dim=torch.Size([1, 300]))
+          (b): Parameter(dim=torch.Size([1, 300]))
+          (nonLin): Sequential(
+            (0): ReLU()
+            (1): Dropout(p=0.2, inplace=False)
+            (2): Linear(in_features=300, out_features=300, bias=True)
+          )
+        )
+        (1): ReLU()
+        (2): Dropout(p=0.2, inplace=False)
+      )
+    )
+    (clf_from_fts): LabelFts(300, 37612, False, cuda:0, False
+    Transform(
+      (transform): Sequential(
+        (0): Rpp(
+          (a): Parameter(dim=torch.Size([1, 300]))
+          (b): Parameter(dim=torch.Size([1, 300]))
+          (nonLin): Sequential(
+            (0): ReLU()
+            (1): Dropout(p=0.2, inplace=False)
+            (2): Linear(in_features=300, out_features=300, bias=True)
+          )
+        )
+      )
+    ))
+    (clf_from_wts): CombineUV(300, 32768, cuda:0, True, sparse=False, bias=True, Alpha=(1, 300), Beta=(1, 300), weight=(32768, 300))
+  )
+)
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 0, loss: 0.0024968403900394735, time: 45.549357891082764 sec
+No need to clean
+Alpha= 0.52266806 Beta= 0.5238098
+||u||=9.75, ||v||=6.72, ||w||=8.56
+INFO:DECAF:Preping the classifier
+INFO:DECAF:Prediction progress: [0/529]
+INFO:DECAF:Prediction progress: [500/529]
+INFO:DECAF:Avg pred time 0.0031 ms
+INFO:DECAF:R@1: 20.02609362059597, R@3: 32.750275027503065, R@200: 62.78242543355487
+INFO:DECAF:P@1: 30.21025698075426, P@3: 18.027465667911006, P@200: 0.5682723328508378
+Cleaing for GPU
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 1, loss: 0.0002923506589863958, time: 42.21501970291138 sec
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 2, loss: 0.0002659246287668127, time: 44.91018342971802 sec
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 3, loss: 0.00024079604633572358, time: 42.51456689834595 sec
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 4, loss: 0.00021525278699168165, time: 44.92600989341736 sec
+INFO:DECAF:Adjusted learning rate to: 0.004
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 5, loss: 0.00018754017274833594, time: 41.92192721366882 sec
+No need to clean
+Alpha= 0.6351617 Beta= 0.54335296
+||u||=10.00, ||v||=7.26, ||w||=10.11
+INFO:DECAF:Preping the classifier
+INFO:DECAF:Prediction progress: [0/529]
+INFO:DECAF:Prediction progress: [500/529]
+INFO:DECAF:Avg pred time 0.0031 ms
+INFO:DECAF:R@1: 23.187154670520265, R@3: 38.75118972571423, R@200: 67.91656469017737
+INFO:DECAF:P@1: 34.74468795194126, P@3: 21.56166178414858, P@200: 0.6166277301882824
+Cleaing for GPU
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 6, loss: 0.00017247005688363943, time: 41.23683786392212 sec
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 7, loss: 0.0001569191339718089, time: 41.751534938812256 sec
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 8, loss: 0.00014137956348121293, time: 42.210851192474365 sec
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 9, loss: 0.00012638163172107138, time: 42.180379152297974 sec
+No need to clean
+Alpha= 0.8094336 Beta= 0.51032084
+||u||=10.15, ||v||=6.51, ||w||=10.97
+INFO:DECAF:Preping the classifier
+INFO:DECAF:Prediction progress: [0/529]
+INFO:DECAF:Prediction progress: [500/529]
+INFO:DECAF:Avg pred time 0.0031 ms
+INFO:DECAF:R@1: 24.055771869318555, R@3: 40.26424889679979, R@200: 67.96548868370054
+INFO:DECAF:P@1: 36.057403493158304, P@3: 22.514925649860633, P@200: 0.6177179515699704
+learning for depth 1
+Cleaing for GPU
+Alpha= 0.8094336 Beta= 0.51032084
+||u||=10.15, ||v||=6.51, ||w||=10.97
+INFO:DECAF:Preping the classifier
+INFO:DECAF:Prediction progress: [0/1157]
+INFO:DECAF:Prediction progress: [500/1157]
+INFO:DECAF:Prediction progress: [1000/1157]
+INFO:DECAF:Avg pred time 0.0031 ms
+INFO:DECAF:R@1: 57.37233999936326, R@3: 84.15177854604678, R@200: 98.27022621414048
+INFO:DECAF:P@1: 85.28457932194881, P@3: 49.90897351523484, P@200: 0.9167921814512455
+Shortlist to beam [0/294786]
+Shortlist to beam [127500/294786]
+Shortlist to beam [255000/294786]
+Average shortlist size 799.9792290000204
+learning for depth 1
+Cleaing for GPU
+Alpha= 0.8094336 Beta= 0.51032084
+||u||=10.15, ||v||=6.51, ||w||=10.97
+INFO:DECAF:Preping the classifier
+INFO:DECAF:Prediction progress: [0/529]
+INFO:DECAF:Prediction progress: [500/529]
+INFO:DECAF:Avg pred time 0.0031 ms
+INFO:DECAF:R@1: 24.055771869318555, R@3: 40.26424889679979, R@200: 67.96548868370054
+INFO:DECAF:P@1: 36.057403493158304, P@3: 22.514925649860633, P@200: 0.6177179515699704
+Shortlist to beam [0/134835]
+Shortlist to beam [127500/134835]
+Average shortlist size 799.9818370601105
+INFO::DECAF::Setting from top layer
+Using eye to initialize!
+Using eye to initialize!
+INFO::Initializing the classifier
+DECAFpp(
+  (depth_node): DECAFt(
+    (embed): CustomEmbedding(37613, 300, cuda:0, padding_idx=37612)
+    (transform_fine): Transform(
+      (transform): Sequential(
+        (0): Rpp(
+          (a): Parameter(dim=torch.Size([1, 300]))
+          (b): Parameter(dim=torch.Size([1, 300]))
+          (nonLin): Sequential(
+            (0): ReLU()
+            (1): Dropout(p=0.2, inplace=False)
+            (2): Linear(in_features=300, out_features=300, bias=True)
+          )
+        )
+        (1): ReLU()
+        (2): Dropout(p=0.2, inplace=False)
+      )
+    )
+    (clf_from_fts): LabelFts(300, 37612, False, cuda:0, False
+    Transform(
+      (transform): Sequential(
+        (0): Rpp(
+          (a): Parameter(dim=torch.Size([1, 300]))
+          (b): Parameter(dim=torch.Size([1, 300]))
+          (nonLin): Sequential(
+            (0): ReLU()
+            (1): Dropout(p=0.2, inplace=False)
+            (2): Linear(in_features=300, out_features=300, bias=True)
+          )
+        )
+      )
+    ))
+    (clf_from_wts): CombineUV(300, 131072, cuda:0, True, sparse=True, bias=True, Alpha=(1, 300), Beta=(1, 300), weight=(131072, 300))
+  )
+)
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 0, loss: 0.024648126939370046, time: 77.2386543750763 sec
+No need to clean
+Alpha= 0.4410318 Beta= 0.52836615
+||u||=8.97, ||v||=6.54, ||w||=7.18
+INFO:DECAF:Preping the classifier
+INFO:DECAF:Prediction progress: [0/529]
+INFO:DECAF:Prediction progress: [500/529]
+INFO:DECAF:Avg pred time 0.0197 ms
+INFO:DECAF:Filtering labels to remove overlap
+INFO:DECAF:Filtering labels to remove overlap
+INFO:DECAF:R@1: 18.803117390389232, R@3: 33.48768247611279, R@200: 63.971681437807526
+INFO:DECAF:P@1: 32.38476656654429, P@3: 22.035327128213204, P@200: 0.6887047131674321
+Cleaing for GPU
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 1, loss: 0.009063534795360212, time: 79.4027259349823 sec
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 2, loss: 0.006437216878070918, time: 78.81429195404053 sec
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 3, loss: 0.00420148422449347, time: 79.01846504211426 sec
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 4, loss: 0.0029172021350960965, time: 79.04907751083374 sec
+INFO:DECAF:Adjusted learning rate to: 0.004
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 5, loss: 0.001781228107421289, time: 79.30645227432251 sec
+No need to clean
+Alpha= 0.8265263 Beta= 0.43427283
+||u||=11.35, ||v||=5.64, ||w||=11.30
+INFO:DECAF:Preping the classifier
+INFO:DECAF:Prediction progress: [0/529]
+INFO:DECAF:Prediction progress: [500/529]
+INFO:DECAF:Avg pred time 0.0200 ms
+INFO:DECAF:Filtering labels to remove overlap
+INFO:DECAF:Filtering labels to remove overlap
+INFO:DECAF:R@1: 21.7694960507262, R@3: 37.83180677618284, R@200: 64.34667062211933
+INFO:DECAF:P@1: 37.01635332072533, P@3: 24.926762339150002, P@200: 0.6918567137607465
+Cleaing for GPU
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 6, loss: 0.0013377965703392858, time: 77.73664498329163 sec
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 7, loss: 0.0011997431753834286, time: 78.50688338279724 sec
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 8, loss: 0.001106770679400958, time: 78.84945940971375 sec
+No need to clean
+INFO:DECAF:Training progress: [0/1157]
+INFO:DECAF:Training progress: [500/1157]
+INFO:DECAF:Training progress: [1000/1157]
+INFO:DECAF:Epoch: 9, loss: 0.0010346780115019153, time: 80.23753905296326 sec
+No need to clean
+Alpha= 0.8953835 Beta= 0.38466576
+||u||=11.68, ||v||=5.87, ||w||=12.09
+INFO:DECAF:Preping the classifier
+INFO:DECAF:Prediction progress: [0/529]
+INFO:DECAF:Prediction progress: [500/529]
+INFO:DECAF:Avg pred time 0.0200 ms
+INFO:DECAF:Filtering labels to remove overlap
+INFO:DECAF:Filtering labels to remove overlap
+INFO:DECAF:R@1: 21.903870162294613, R@3: 37.914426274087845, R@200: 64.04116141951378
+INFO:DECAF:P@1: 37.23291430266622, P@3: 24.980408153169677, P@200: 0.6885934660876675
+INFO:DECAF:Training time: 1234.7951810359955 sec, Validation time: 9.288417339324951 sec, Shortlist time: 0 sec, Model size: 275.6059265136719 MB
+Traceback (most recent call last):
+  File "/home/soumyac/xml/DECAF/DECAF/main.py", line 12, in <module>
+    from libs.model import *
+  File "/home/soumyac/xml/DECAF/DECAF/libs/model.py", line 1, in <module>
+    from .model_base import ModelDECAFBase
+  File "/home/soumyac/xml/DECAF/DECAF/libs/model_base.py", line 337
+    self.net.train()
+    ^
+IndentationError: unexpected indent
+Traceback (most recent call last):
+  File "/home/soumyac/xml/DECAF/DECAF/main.py", line 12, in <module>
+    from libs.model import *
+  File "/home/soumyac/xml/DECAF/DECAF/libs/model.py", line 1, in <module>
+    from .model_base import ModelDECAFBase
+  File "/home/soumyac/xml/DECAF/DECAF/libs/model_base.py", line 337
+    self.net.train()
+    ^
+IndentationError: unexpected indent
+Traceback (most recent call last):
+  File "/home/soumyac/xml/DECAF/DECAF/main.py", line 12, in <module>
+    from libs.model import *
+  File "/home/soumyac/xml/DECAF/DECAF/libs/model.py", line 1, in <module>
+    from .model_base import ModelDECAFBase
+  File "/home/soumyac/xml/DECAF/DECAF/libs/model_base.py", line 337
+    self.net.train()
+    ^
+IndentationError: unexpected indent
+Taking 3 instances in emsemble
+Merging predictions..
+Overlap is: 73329
+Traceback (most recent call last):
+  File "/home/soumyac/xml/DECAF/DECAF/tools/evaluate.py", line 63, in <module>
+    main(targets_file, train_label_file, predictions_file, A, B, docs, lbls)
+  File "/home/soumyac/xml/DECAF/DECAF/tools/evaluate.py", line 45, in main
+    load_npz(predictions_file+'.npz').tolil(),
+  File "/home/soumyac/miniconda3/envs/decaf/lib/python3.7/site-packages/scipy/sparse/_matrix_io.py", line 131, in load_npz
+    with np.load(file, **PICKLE_KWARGS) as loaded:
+  File "/home/soumyac/miniconda3/envs/decaf/lib/python3.7/site-packages/numpy/lib/npyio.py", line 415, in load
+    fid = open(os_fspath(file), "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/soumyac/scratch/XC/results/DECAF/LF-AmazonTitles-131K/v_TIME_RUN/test_predictions_num_trees=3.npz'
+Taking 2 instances in emsemble
+Merging predictions..
+Overlap is: 73329
+Traceback (most recent call last):
+  File "/home/soumyac/xml/DECAF/DECAF/tools/evaluate.py", line 63, in <module>
+    main(targets_file, train_label_file, predictions_file, A, B, docs, lbls)
+  File "/home/soumyac/xml/DECAF/DECAF/tools/evaluate.py", line 45, in main
+    load_npz(predictions_file+'.npz').tolil(),
+  File "/home/soumyac/miniconda3/envs/decaf/lib/python3.7/site-packages/scipy/sparse/_matrix_io.py", line 131, in load_npz
+    with np.load(file, **PICKLE_KWARGS) as loaded:
+  File "/home/soumyac/miniconda3/envs/decaf/lib/python3.7/site-packages/numpy/lib/npyio.py", line 415, in load
+    fid = open(os_fspath(file), "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/soumyac/scratch/XC/results/DECAF/LF-AmazonTitles-131K/v_TIME_RUN/test_predictions_num_trees=2.npz'
+Taking 1 instances in emsemble
+Merging predictions..
+Overlap is: 73329
+Traceback (most recent call last):
+  File "/home/soumyac/xml/DECAF/DECAF/tools/evaluate.py", line 63, in <module>
+    main(targets_file, train_label_file, predictions_file, A, B, docs, lbls)
+  File "/home/soumyac/xml/DECAF/DECAF/tools/evaluate.py", line 45, in main
+    load_npz(predictions_file+'.npz').tolil(),
+  File "/home/soumyac/miniconda3/envs/decaf/lib/python3.7/site-packages/scipy/sparse/_matrix_io.py", line 131, in load_npz
+    with np.load(file, **PICKLE_KWARGS) as loaded:
+  File "/home/soumyac/miniconda3/envs/decaf/lib/python3.7/site-packages/numpy/lib/npyio.py", line 415, in load
+    fid = open(os_fspath(file), "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/soumyac/scratch/XC/results/DECAF/LF-AmazonTitles-131K/v_TIME_RUN/test_predictions_num_trees=1.npz'
+/home/soumyac/xml/DECAF
